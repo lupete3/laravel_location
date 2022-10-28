@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('duree_location', function (Blueprint $table) {
+        Schema::create('duree_locations', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle');
+            $table->integer
+            ('valeurEnHeure');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('duree_location');
+        Schema::dropIfExists('duree_locations');
     }
 };
